@@ -33,6 +33,10 @@ helpers do
   end
 end
 
+before do
+  @prod_all_list = Product.order "created_at DESC"
+end
+
 before '/secure/*' do
   unless session[:identity]
     session[:previous_url] = request.path

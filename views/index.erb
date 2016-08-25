@@ -3,26 +3,18 @@
 
 <div class="row">
 	<div class="col-md-3">
-	One
+	<img src="/images/logo.png" width="200" class="img-rounded">
 	</div>
 	<div class="col-md-9">
+		<% @prod_all_list.each do |product| %>
 		<div class="col-sm-4 col-md-4 col-lg-4">
+		<img src="<%=product.path_to_pic%>" width="200" alt="<%=product.title%>" class="img-rounded">
+		<h4><%=product.title%></h4>
+		<h5><%=product.desc%></h5>
+		<h5>Размер: <%=product.size%></h5>
+		<h5>Цена: <%=product.price%></h5>
 		<button class="btn btn-primary btn-large" onclick="something()">ClickMe</button>
 		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4">
-		<button class="btn btn-primary btn-large" onclick="something()">ClickMe</button>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4">
-		<button class="btn btn-primary btn-large" onclick="something()">ClickMe</button>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4">
-		<button class="btn btn-primary btn-large" onclick="something()">ClickMe</button>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4">
-		<button class="btn btn-primary btn-large" onclick="something()">ClickMe</button>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4">
-		<button class="btn btn-primary btn-large" onclick="something()">ClickMe</button>
-		</div>
+		<%end%>
 	</div>
 </div>
