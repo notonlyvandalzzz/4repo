@@ -8,7 +8,7 @@
 	<div class="col-md-9">
 		<div class="row">
 			<% @prod_all_list.each do |product| %>
-				<% if product.id % 3 ==0 %>
+				<% if product.id+2 % 3 == 0 %>
 					</div><div class="row">
 				<%end%>
 				<div class="col-sm-4 col-md-4 col-lg-4">
