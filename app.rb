@@ -5,18 +5,22 @@ require 'sinatra/activerecord'
 
 set :database, "sqlite3:pizzashop.db"
 
+# class Product < ActiveRecord::Base
+#     belongs_to :order
+# end
+
+# class Order < ActiveRecord::Base
+#     has_many :products
+#     belongs_to :client
+# end
+
+# class Client < ActiveRecord::Base
+#     has_many :orders
+#     has_many :products, :through => :orders
+# end
+
 class Product < ActiveRecord::Base
-    belongs_to :order
-end
-
-class Order < ActiveRecord::Base
-    has_many :products
-    belongs_to :client
-end
-
-class Client < ActiveRecord::Base
-    has_many :orders
-    has_many :products, :through => :orders
+#     belongs_to :order
 end
 
 configure do
