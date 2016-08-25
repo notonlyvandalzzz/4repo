@@ -9,15 +9,17 @@
 		<div class="row">
 			<% @prod_all_list.each do |product| %>
 
-			<div class="col-sm-4 col-md-4 col-lg-4">
-			<img src="<%=product.path_to_pic%>" width="200" alt="<%=product.title%>" class="img-rounded">
-			<h4><%=product.title%></h4>
-			<h5><%=product.desc%></h5>
-			<h5>Размер: <%=product.size%></h5>
-			<h5>Цена: <%=product.price%></h5>
-			<button class="btn btn-primary btn-large" onclick="something()">ClickMe</button>
-			</div>
-			<% puts '</div><div class="row">' if product.id % 3 ==0 %>
+				<div class="col-sm-4 col-md-4 col-lg-4">
+				<img src="<%=product.path_to_pic%>" width="200" alt="<%=product.title%>" class="img-rounded">
+				<h4><%=product.title%></h4>
+				<h5><%=product.desc%></h5>
+				<h5>Размер: <%=product.size%></h5>
+				<h5>Цена: <%=product.price%></h5>
+				<button class="btn btn-primary btn-large" onclick="something()">ClickMe</button>
+				</div>
+				<% if product.id % 3 ==0 %>
+					</div><div class="row">
+				<%end%>
 			<%end%>
 		</div>
 	</div>
