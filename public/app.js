@@ -1,5 +1,5 @@
-var x = 1;
+
 function something() {
+	var x = window.localStorage.getItem('aaa');
 		alert (x);
-		x = x + 1;
 	}
