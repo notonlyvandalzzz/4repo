@@ -7,8 +7,9 @@ function something() {
 	}
 
 function addtocart(id) {
-	var x = window.localStorage.getItem('pzshp_product_' + id);
+	var key = 'pzshp_product_' + id;
+	var x = window.localStorage.getItem(key);
 	x = x * 1 + 1;
-	window.localStorage.setItem('pzshp_product_' + id, x);
-	alert ('You\'ve added one pizza with id ' + id);
+	window.localStorage.setItem(key, x);
+	// alert ('You\'ve added one pizza with id ' + id);
 }
