@@ -12,7 +12,9 @@ function addtocart(id) {
 	x = x * 1 + 1;
 	window.localStorage.setItem(key, x);
 	for (var i = 0; i < localStorage.length; i++){
-		tot = tot * 1 + localStorage.getItem(localStorage.key(i));
+		if (key.search('pzshp_product') >= 0) {
+			tot = tot * 1 + window.localStorage[key] * 1;
+		}
 	}
 	alert ('Total items: ' + tot);
 	// alert ('You\'ve added one pizza with id ' + id);
