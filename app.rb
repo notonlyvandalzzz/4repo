@@ -34,7 +34,7 @@ helpers do
 end
 
 before do
-  @prod_all_list = Product.order "created_at DESC"
+  @prod_all_list = Product.order "created_at"
 end
 
 before '/secure/*' do
