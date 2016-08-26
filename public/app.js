@@ -19,9 +19,15 @@ function addtocart(id) {
 function countcart() {
 	var tot = 0;
 	for (var i = 0; i < localStorage.length; i++){
-		if (key.search('pzshp_product') >= 0) {
-			tot = tot * 1 + window.localStorage[key] * 1;
+		var ckey = window.localStorage.key(i);
+		var cval = window.localStorage.getItem(ckey);
+		// if (key.search('pzshp_product') >= 0) {
+		// 	tot = tot * 1 + window.localStorage[key] * 1;
+		// }
+		if (key.indexOf('pzshp_product') == 0) {
+			tot = tot * 1 + cval;
 		}
 	}
-	document.getElementById('basket').innerHTML = 'Total ' + tot;
+	// document.getElementById('basket').innerHTML = 'Total ' + tot;
+	return tot;
 }
