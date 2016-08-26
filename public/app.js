@@ -5,3 +5,7 @@ function something() {
 	window.localStorage.setItem('aaa', x);
 	alert (x);
 	}
+
+function addtocart() {
+	alert ('Hello from function');
+}
