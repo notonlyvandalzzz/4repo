@@ -24,8 +24,8 @@ function countcart() {
 		// if (key.search('pzshp_product') >= 0) {
 		// 	tot = tot * 1 + window.localStorage[key] * 1;
 		// }
-		if (key.indexOf('pzshp_product') == 0) {
-			tot = tot * 1 + cval;
+		if (ckey.indexOf('pzshp_product') == 0) {
+			tot = tot * 1 + cval * 1;
 		}
 	}
 	// document.getElementById('basket').innerHTML = 'Total ' + tot;
