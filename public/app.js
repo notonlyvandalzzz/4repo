@@ -12,7 +12,7 @@ function addtocart(id) {
 	var x = window.localStorage.getItem(key);
 	x = x * 1 + 1;
 	window.localStorage.setItem(key, x);
-	
+	update_orders_input();
 	// alert ('You\'ve added one pizza with id ' + id);
 }
 
@@ -42,9 +42,15 @@ function cart_get_orders() {
 		// }
 		if (ckey.indexOf('pzshp_product') == 0) {
 			ord = ord + ckey + '=' + cval + ',';
-	}
+		}
 	// document.getElementById('basket').innerHTML = 'Total ' + tot;
 	}
 	return ord;
 	
+}
+
+
+function update_orders_input() {
+	var orders = cart_get_orders();
+	$('#orderlist').val(orders);
 }
