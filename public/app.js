@@ -19,6 +19,7 @@ function addtocart(id) {
 
 function clear_cart() {
 	window.localStorage.clear();
+	window.location('http://pizza.dexp.club');
 }
 
 function cart_get_no_items() {
