@@ -45,4 +45,5 @@ function cart_get_orders() {
 	}
 	// document.getElementById('basket').innerHTML = 'Total ' + tot;
 	return ord;
+	}
 }
