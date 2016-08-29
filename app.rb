@@ -81,6 +81,6 @@ end
 
 
 post '/cart' do
-  @ord_list = params[:orders]
+  @ord_list = params[:orders].split(',')
   erb :cart
 end
