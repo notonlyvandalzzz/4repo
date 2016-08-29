@@ -81,5 +81,6 @@ end
 
 
 post '/cart' do
-  erb "Cart content"
+  @ord_list = params[:orders]
+  erb :cart
 end
