@@ -81,6 +81,10 @@ end
 
 
 post '/cart' do
-  @ord_list = params[:orders].split(',')
+  @ord_hash = {}
+  params[:orders].split(',').each do |kvpair| 
+    item = kvpair.split('=')
+    @ord_hash[item[0]] = item[1]
+  end
   erb :cart
 end
