@@ -12,11 +12,12 @@
 <% numbr = 1 %>
 <% @ord_hash.each do |k,v| %>
 	<tr>
+		<% curr_item = Product.find(k) %>
 		<td><%=numbr%></td>
-		<td><%=k%></td>
+		<td><%=curr_item.title%></td>
 		<td><%=v%></td>
-		<td>1</td>
-		<td>2</td>
+		<td><%=curr_item.price%></td>
+		<td><%=curr_item.price*v.to_i%></td>
 	</tr>
 <% numbr += 1 %>
 <%end%>
