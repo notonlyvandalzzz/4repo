@@ -13,6 +13,7 @@ function addtocart(id) {
 	x = x * 1 + 1;
 	window.localStorage.setItem(key, x);
 	update_orders_input();
+	update_ord_btn();
 	// alert ('You\'ve added one pizza with id ' + id);
 }
 
@@ -53,4 +54,9 @@ function cart_get_orders() {
 function update_orders_input() {
 	var orders = cart_get_orders();
 	$('#orderlist').val(orders);
+}
+
+function update_ord_btn() {
+	var amount = 'Cart (' + cart_get_no_items() + ')';
+	$('#ordamnt').val(amount);
 }
