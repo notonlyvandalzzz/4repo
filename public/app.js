@@ -16,7 +16,7 @@ function addtocart(id) {
 	// alert ('You\'ve added one pizza with id ' + id);
 }
 
-function countcart() {
+function cart_get_no_items() {
 	var tot = 0;
 	for (var i = 0; i < localStorage.length; i++){
 		var ckey = window.localStorage.key(i);
@@ -30,4 +30,19 @@ function countcart() {
 	}
 	// document.getElementById('basket').innerHTML = 'Total ' + tot;
 	return tot;
+}
+
+function cart_get_orders() {
+	var ord = 0;
+	for (var i = 0; i < localStorage.length; i++){
+		var ckey = window.localStorage.key(i);
+		var cval = window.localStorage.getItem(ckey);
+		// if (key.search('pzshp_product') >= 0) {
+		// 	tot = tot * 1 + window.localStorage[key] * 1;
+		// }
+		if (ckey.indexOf('pzshp_product') == 0) {
+			ord = ord + ckey + '=' = cval + ',';
+	}
+	// document.getElementById('basket').innerHTML = 'Total ' + tot;
+	return ord;
 }
