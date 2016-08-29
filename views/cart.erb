@@ -9,16 +9,16 @@
 	</tr>
 </thead>
 <tbody>
-
+<% numbr = 1 %>
 <% @ord_hash.each do |k,v| %>
 	<tr>
-		<td>3</td>
+		<td><%=numbr%></td>
 		<td><%=k%></td>
 		<td><%=v%></td>
 		<td>1</td>
 		<td>2</td>
 	</tr>
-
+<% numbr = numbr + 1 %>
 <%end%>
 </tbody>
 </table>
