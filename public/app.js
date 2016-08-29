@@ -41,7 +41,7 @@ function cart_get_orders() {
 		// 	tot = tot * 1 + window.localStorage[key] * 1;
 		// }
 		if (ckey.indexOf('pzshp_product') == 0) {
-			ord = ord + ckey + '=' = cval + ',';
+			ord = ord + ckey + '=' + cval + ',';
 	}
 	// document.getElementById('basket').innerHTML = 'Total ' + tot;
 	return ord;
