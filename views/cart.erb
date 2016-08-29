@@ -1,4 +1,24 @@
+<table class="table table-striped">
+<thead>
+	<tr>
+		<th>No.</th>
+		<th>Наименование</th>
+		<th>Количество</th>
+		<th>Цена</th>
+		<th>Итого за позицию</th>
+	</tr>
+</thead>
+<tbody>
+<% numbr = 1 %>
 <% @ord_hash.each do |k,v| %>
-<h3><%=k%></h3>
-<h4><%=v%></h4>
+	<tr>
+		<td><%=numbr%></td>
+		<td><%=k%></td>
+		<td><%=v%></td>
+		<td>1</td>
+		<td>2</td>
+	</tr>
+<% numbr += %>
 <%end%>
+</tbody>
+</table>
