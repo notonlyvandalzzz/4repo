@@ -33,7 +33,7 @@ function cart_get_no_items() {
 }
 
 function cart_get_orders() {
-	var ord = 0;
+	var ord = '';
 	for (var i = 0; i < localStorage.length; i++){
 		var ckey = window.localStorage.key(i);
 		var cval = window.localStorage.getItem(ckey);
