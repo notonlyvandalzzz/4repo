@@ -17,6 +17,10 @@ function addtocart(id) {
 	// alert ('You\'ve added one pizza with id ' + id);
 }
 
+function clear_cart() {
+	window.localStorage.clear();
+}
+
 function cart_get_no_items() {
 	var tot = 0;
 	for (var i = 0; i < localStorage.length; i++){
