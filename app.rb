@@ -78,3 +78,8 @@ get '/secure/place' do
   erb 'This is a secret place that only <%=session[:identity]%> has access to!'
   erb :secret_area
 end
+
+
+post '/cart' do
+  erb "Cart content"
+end
