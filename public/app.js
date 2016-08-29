@@ -44,6 +44,7 @@ function cart_get_orders() {
 			ord = ord + ckey + '=' + cval + ',';
 	}
 	// document.getElementById('basket').innerHTML = 'Total ' + tot;
-	return ord;
 	}
+	return ord;
+	
 }
