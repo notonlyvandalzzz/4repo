@@ -1,29 +1,31 @@
-<table class="table table-striped">
-<thead>
-	<tr>
-		<th>No.</th>
-		<th>Наименование</th>
-		<th>Количество</th>
-		<th>Цена</th>
-		<th>Итого за позицию</th>
-	</tr>
-</thead>
-<tbody>
-<% numbr = 1 %>
-<% gt_price = 0 %>
-<% @ord_hash.each do |k,v| %>
-	<tr>
-		<% curr_item = Product.find(k) %>
-		<td><%=numbr%></td>
-		<td><%=curr_item.title%></td>
-		<td><%=v%></td>
-		<td><%=curr_item.price%></td>
-		<td><%=curr_item.price*v.to_i%></td>
-	</tr>
-<% numbr += 1 %>
-<% gt_price += curr_item.price*v.to_i %>
-<%end%>
-</tbody>
-</table>
-<div class="col-md-2 col-md-offset-3"><button class="btn btn-danger btn-sm" onclick="clear_cart()">Очистить корзину</button></div>
-<div class="col-md-2"><p class="bg-success">Итого: <%=gt_price%></p></div>
+<div class="col-md-9 col-md-offset-3">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Наименование</th>
+				<th>Количество</th>
+				<th>Цена</th>
+				<th>Итого за позицию</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% numbr = 1 %>
+		<% gt_price = 0 %>
+		<% @ord_hash.each do |k,v| %>
+			<tr>
+				<% curr_item = Product.find(k) %>
+				<td><%=numbr%></td>
+				<td><%=curr_item.title%></td>
+				<td><%=v%></td>
+				<td><%=curr_item.price%></td>
+				<td><%=curr_item.price*v.to_i%></td>
+			</tr>
+		<% numbr += 1 %>
+		<% gt_price += curr_item.price*v.to_i %>
+		<%end%>
+		</tbody>
+	</table>
+	<div class="col-md-2 col-md-offset-3"><button class="btn btn-danger btn-sm" onclick="clear_cart()">Очистить корзину</button></div>
+	<div class="col-md-2"><p class="bg-success">Итого: <%=gt_price%></p></div>
+</div>
