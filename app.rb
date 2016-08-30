@@ -82,6 +82,7 @@ end
 
 post '/cart' do
   @ord_hash = {}
+  @ord_inpt = params[:orders]
   params[:orders].split(',').each do |kvpair| 
     # item = kvpair.split('=')
     # @ord_hash[item[0].delete('pzshp_product_')] = item[1]
@@ -93,4 +94,12 @@ end
 
 get '/cart' do
   redirect to '/'
+end
+
+get '/order' do
+  redirect to '/'
+end
+
+post '/order' do
+
 end
