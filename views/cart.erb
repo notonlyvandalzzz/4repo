@@ -5,34 +5,63 @@
 	<p id="basket"></p>
 	</div>
 	<div class="col-md-9">
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>No.</th>
-					<th>Наименование</th>
-					<th>Количество</th>
-					<th>Цена</th>
-					<th>Итого за позицию</th>
-				</tr>
-			</thead>
-			<tbody>
-			<% numbr = 1 %>
-			<% gt_price = 0 %>
-			<% @ord_hash.each do |k,v| %>
-				<tr>
-					<% curr_item = Product.find(k) %>
-					<td><%=numbr%></td>
-					<td><%=curr_item.title%></td>
-					<td><%=v%></td>
-					<td><%=curr_item.price%></td>
-					<td><%=curr_item.price*v.to_i%></td>
-				</tr>
-			<% numbr += 1 %>
-			<% gt_price += curr_item.price*v.to_i %>
-			<%end%>
-			</tbody>
-		</table>
-		<div class="col-md-2 col-md-offset-3"><button class="btn btn-danger btn-sm" onclick="clear_cart()">Очистить корзину</button></div>
-		<div class="col-md-2 col-md-offset-3"><p class="bg-success">Итого: <%=gt_price%></p></div>
+		<div class="row">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>Наименование</th>
+						<th>Количество</th>
+						<th>Цена</th>
+						<th>Итого за позицию</th>
+					</tr>
+				</thead>
+				<tbody>
+				<% numbr = 1 %>
+				<% gt_price = 0 %>
+				<% @ord_hash.each do |k,v| %>
+					<tr>
+						<% curr_item = Product.find(k) %>
+						<td><%=numbr%></td>
+						<td><%=curr_item.title%></td>
+						<td><%=v%></td>
+						<td><%=curr_item.price%></td>
+						<td><%=curr_item.price*v.to_i%></td>
+					</tr>
+				<% numbr += 1 %>
+				<% gt_price += curr_item.price*v.to_i %>
+				<%end%>
+				</tbody>
+			</table>
+			<div class="col-md-2 col-md-offset-3"><button class="btn btn-danger btn-sm" onclick="clear_cart()">Очистить корзину</button></div>
+			<div class="col-md-2 col-md-offset-3"><input class="form-control" type="text" placeholder="Итого: <%=gt_price%>" disabled></div>
+		</div>
+		<div class="row">
+			<form action="/order" method="POST" class="form-horizontal">
+			  <div class="form-group">
+			    <label for="inputName" class="col-sm-2 control-label">Ваше имя</label>
+			    <div class="col-sm-10">
+			      <input type="text" name="order[name]" class="form-control" id="inputName3" placeholder="Имя" required="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputAddress" class="col-sm-2 control-label">Ваш адрес</label>
+			    <div class="col-sm-10">
+			      <input type="text" name="order[address]" class="form-control" id="inputAddress3" placeholder="Адрес" required="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputPhone" class="col-sm-2 control-label">Ваш телефон</label>
+			    <div class="col-sm-10">
+			      <input type="text" name="order[phone]" class="form-control" id="inputPhone3" placeholder="89012345678" required="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-default">Отправить заказ</button>
+			    </div>
+			  </div>
+			</form>
+		</div>
 	</div>
 </div>
