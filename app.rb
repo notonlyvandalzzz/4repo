@@ -83,8 +83,9 @@ end
 post '/cart' do
   @ord_hash = {}
   params[:orders].split(',').each do |kvpair| 
-    item = kvpair.split('=')
-    @ord_hash[item[0].delete('pzshp_product_')] = item[1]
+    # item = kvpair.split('=')
+    # @ord_hash[item[0].delete('pzshp_product_')] = item[1]
+      @ord_hash[kvpair.split('=')[0].delete('pzshp_product_')] = kvpair.split('=')[1]
   end
   erb :cart
 end
