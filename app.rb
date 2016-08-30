@@ -107,7 +107,7 @@ end
 post '/order' do
   @o_new = Order.new params[:order]
   if @o_new.save
-    redirect to '/'
+    erb :complete
   else
     @error = "Error somewhere: " + @o_new.errors.full_messages.first
     erb :index
