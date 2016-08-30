@@ -89,3 +89,8 @@ post '/cart' do
   end
   erb :cart
 end
+
+
+get '/cart' do
+  redirect to '/'
+end
