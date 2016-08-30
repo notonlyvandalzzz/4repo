@@ -23,6 +23,10 @@ class Product < ActiveRecord::Base
 #     belongs_to :order
 end
 
+class Order < ActiveRecord::Base
+
+end
+
 configure do
   enable :sessions
 end
