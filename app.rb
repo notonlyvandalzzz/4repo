@@ -79,7 +79,8 @@ get '/logout' do
 end
 
 get '/secure/place' do
-  erb 'This is a secret place that only <%=session[:identity]%> has access to!'
+  @all_orders = Order.order "created_at"
+  # erb 'This is a secret place that only <%=session[:identity]%> has access to!'
   erb :secret_area
 end
 
