@@ -80,11 +80,16 @@ end
 
 get '/secure/place' do
 <<<<<<< HEAD
+<<<<<<< HEAD
   @all_orders = Order.order "created_at desc"
   # erb 'This is a secret place that only <%=session[:identity]%> has access to!'
 =======
   erb 'This is a secret place that only <%=session[:identity]%> has access to!'
 >>>>>>> parent of 1871378... admin area add
+=======
+  @all_orders = Order.order "created_at"
+  # erb 'This is a secret place that only <%=session[:identity]%> has access to!'
+>>>>>>> 1871378... admin area add
   erb :secret_area
 end
 
