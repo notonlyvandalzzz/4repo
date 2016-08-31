@@ -1,3 +1,13 @@
 #ord_button {
-	padding-top: 10px;
+}
+
+#ordamnt {
+	padding-top: 13px;
+	background-color: #F8F8F8;
+	border-color: #ADADAD;
+	color: #333333;
+}
+
+#ordamnt:hover {
+	background-color: #BEBEBE;
 }
